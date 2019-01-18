@@ -301,6 +301,7 @@ QBuffer *writePdfFields(const struct WriteFieldsParams &params) {
         // Text
         if (field->type() == Poppler::FormField::FormText) {
           Poppler::FormFieldText *textField = (Poppler::FormFieldText *) field;
+          textField->setFontSize(12);
           textField->setText(QString::fromUtf8(params.fields.at(fieldName).c_str()));
         }
 
